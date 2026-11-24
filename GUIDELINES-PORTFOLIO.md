@@ -13,7 +13,6 @@ Le skill `frontend-design` pousse vers des choix audacieux et distinctifs. Ici, 
 ## 1. Skills à installer et à charger avant de commencer
 
 ```bash
-npx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices
 npx skills add https://github.com/anthropics/skills --skill frontend-design
 ```
 

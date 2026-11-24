@@ -1,17 +1,15 @@
 import type { IconName } from "./icons";
 
 /**
- * TODO: confirmer le nom affiché. Le guideline fixe « Emmanuel Kacou ».
- * L'alias public Satoshi0xE n'est pas repris dans le titre tant qu'il n'est pas confirmé.
  * TODO: illustration du hero à remplacer par une photo si elle est fournie.
  * TODO: liens publics manquants pour Abiaty Ma News, SANWI CONNECT, X-Connect et Rustavel.
- * TODO: captures d'écran des projets, nécessaires avant tout clip Remotion.
+ * TODO: captures de projets manquantes avant tout clip Remotion.
  * Le second numéro WhatsApp de l'ancien site (+225 01 50 14 99 12) n'est pas listé dans le guideline.
  */
 
 export const page = {
   title: "Portfolio",
-  greeting: "Bonjour, je suis Emmanuel Kacou.",
+  greeting: "Bonjour, je suis Emmanuel KACOU.",
   contactLabel: "Me contacter",
   email: "kacouemmanuel225@yahoo.com",
 };
@@ -45,6 +43,7 @@ export const skillTabs: SkillTab[] = [
       { label: "React", icon: "atom" },
       { label: "Vue.js", icon: "hexagon" },
       { label: "Nuxt", icon: "boxes" },
+      { label: "NextJS", icon: "boxes" },
       { label: "TailwindCSS", icon: "wind" },
       { label: "PostgreSQL", icon: "database" },
       { label: "MySQL", icon: "cylinder" },
@@ -60,7 +59,6 @@ export const skillTabs: SkillTab[] = [
       { label: "APIs REST", icon: "webhook" },
       { label: "Applications mobiles", icon: "smartphone" },
       { label: "Web en production", icon: "globe" },
-      { label: "Systèmes avec Rust", icon: "cpu" },
       { label: "Blockchain", icon: "workflow" },
     ],
   },
@@ -71,7 +69,6 @@ export const skillTabs: SkillTab[] = [
     items: [
       { label: "PHP", icon: "braces" },
       { label: "JavaScript", icon: "code" },
-      { label: "Rust", icon: "cpu" },
       { label: "Python (débutant)", icon: "terminal" },
     ],
   },
@@ -84,6 +81,10 @@ export type Project = {
   status: string;
   icon: IconName;
   href?: string;
+  preview?: {
+    src: string;
+    alt: string;
+  };
 };
 
 export type ProjectTab = {
@@ -114,7 +115,11 @@ export const projectTabs: ProjectTab[] = [
         tags: ["Laravel", "React"],
         status: "En production",
         icon: "building",
-        href: "https://www.geniusntech.com",
+        href: "https://geniusntech.com/",
+        preview: {
+          src: "/projects/geniusntech.jpg",
+          alt: "Capture de la page d'accueil de Genius Network Technology",
+        },
       },
       {
         title: "Coopewo",
@@ -132,7 +137,11 @@ export const projectTabs: ProjectTab[] = [
         tags: ["Laravel", "TailwindCSS"],
         status: "En production",
         icon: "car",
-        href: "https://www.attron-cab.com",
+        href: "https://attron-cab.com/",
+        preview: {
+          src: "/projects/attron-cab.jpg",
+          alt: "Capture de la page d'accueil d'Attron Cab",
+        },
       },
     ],
   },
@@ -169,15 +178,18 @@ export const projectTabs: ProjectTab[] = [
 
 export const now = [
   "Abiaty Ma News, avec une API Laravel et React Native.",
-  "Rust pour la blockchain, et Rustavel.",
+  "Mathematiques, Machine Learning & Deep Learning.",
 ];
 
 export const contacts: { label: string; href: string }[] = [
-  { label: "kacouemmanuel225@yahoo.com", href: "mailto:kacouemmanuel225@yahoo.com" },
-  { label: "WhatsApp", href: "https://wa.me/2250757567142" },
+  {
+    label: "kacouemmanuel225@yahoo.com",
+    href: "mailto:kacouemmanuel225@yahoo.com",
+  },
+  { label: "WhatsApp", href: "https://wa.me/2250150149912" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/emmanuel-kacou-74397b247",
   },
-  { label: "GitHub", href: "https://github.com/satoshi0xE" },
+  { label: "GitHub", href: "https://github.com/satoshi0xe" },
 ];

@@ -44,7 +44,7 @@ export function App() {
             label: tab.label,
             icon: tab.icon,
             panel: (
-              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <ul className="grid auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2">
                 {tab.items.map((project) => (
                   <ProjectCard key={project.title} project={project} />
                 ))}
@@ -72,7 +72,7 @@ export function App() {
       </section>
 
       <footer id="contact" className="mt-12 border-t border-line pt-6">
-        <p className="text-[13px] text-muted">Emmanuel Kacou, Abidjan</p>
+        <p className="text-[13px] text-muted">Emmanuel KACOU, Abidjan</p>
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[14px]">
           {contacts.map((contact) => (
             <li key={contact.href}>

@@ -1,5 +1,6 @@
 import type { Project } from "../content";
 import { icons } from "../icons";
+import { ExternalLink, Image as ImageIcon } from "lucide-react";
 
 function Body({ project }: { project: Project }) {
   const Icon = icons[project.icon];
@@ -7,6 +8,24 @@ function Body({ project }: { project: Project }) {
 
   return (
     <>
+      {project.preview ? (
+        <img
+          src={project.preview.src}
+          alt={project.preview.alt}
+          className="mb-3 aspect-[16/10] w-full rounded-[4px] border border-line object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div
+          role="img"
+          aria-label={`Aperçu de ${project.title} à ajouter`}
+          className="mb-3 flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 rounded-[4px] border border-dashed border-line bg-hover text-muted"
+        >
+          <ImageIcon className="size-6" strokeWidth={1.5} aria-hidden="true" />
+          <span className="text-[12px]">Aperçu à ajouter</span>
+        </div>
+      )}
       <div className="flex items-start gap-2">
         <Icon
           className="mt-0.5 size-4 shrink-0"
@@ -28,6 +47,16 @@ function Body({ project }: { project: Project }) {
           </li>
         ))}
       </ul>
+      {project.href ? (
+        <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-medium text-ink underline decoration-line underline-offset-2">
+          Visiter le site
+          <ExternalLink
+            className="size-3.5"
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
+        </span>
+      ) : null}
     </>
   );
 }
@@ -50,7 +79,7 @@ export function ProjectCard({ project }: { project: Project }) {
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className={`${className} block`}
+        className={className}
       >
         <Body project={project} />
         <span className="sr-only">, nouvel onglet</span>

@@ -3,7 +3,7 @@ export function Illustration() {
   return (
     <svg
       viewBox="0 0 200 156"
-      className="h-[132px] w-[168px] shrink-0 sm:h-[148px] sm:w-[188px]"
+      className="h-[112px] w-[144px] shrink-0 self-end sm:h-[148px] sm:w-[188px]"
       fill="none"
       aria-hidden="true"
     >

@@ -4,7 +4,7 @@ import { Illustration } from "./Illustration";
 
 export function Hero() {
   return (
-    <header className="mt-8 flex items-start justify-between gap-6">
+    <header className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:justify-between sm:gap-6">
       <div className="min-w-0 max-w-[60ch]">
         <p className="text-[16px] font-semibold leading-snug">{page.greeting}</p>
         <p className="mt-3 text-[15px] leading-[1.6] text-ink">
