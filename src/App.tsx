@@ -44,11 +44,17 @@ export function App() {
             label: tab.label,
             icon: tab.icon,
             panel: (
-              <ul className="grid auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2">
-                {tab.items.map((project) => (
-                  <ProjectCard key={project.title} project={project} />
-                ))}
-              </ul>
+              tab.items.length > 0 ? (
+                <ul className="grid auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2">
+                  {tab.items.map((project) => (
+                    <ProjectCard key={project.title} project={project} />
+                  ))}
+                </ul>
+              ) : (
+                <p className="rounded-[6px] border border-line px-3 py-4 text-[14px] text-muted">
+                  Rien n'est encore disponible publiquement.
+                </p>
+              )
             ),
           }))}
         />
@@ -58,17 +64,17 @@ export function App() {
         <h2 className="text-[21px] leading-snug font-semibold tracking-[-0.01em]">
           {sections.now}
         </h2>
-        <ul className="mt-4 flex flex-col gap-2.5 text-[15px] leading-relaxed">
+        <dl className="mt-4 border-t border-line text-[15px] leading-relaxed">
           {now.map((item) => (
-            <li key={item} className="flex gap-2.5">
-              <span
-                className="mt-[9px] size-1.5 shrink-0 rounded-full bg-ink"
-                aria-hidden="true"
-              />
-              <span>{item}</span>
-            </li>
+            <div
+              key={item.label}
+              className="grid gap-1 border-b border-line py-3 sm:grid-cols-[112px_1fr] sm:gap-4"
+            >
+              <dt className="text-[13px] text-muted">{item.label}</dt>
+              <dd>{item.text}</dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </section>
 
       <footer id="contact" className="mt-12 border-t border-line pt-6">

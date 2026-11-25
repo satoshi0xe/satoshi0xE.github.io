@@ -6,12 +6,12 @@ export function Hero() {
   return (
     <header className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:justify-between sm:gap-6">
       <div className="min-w-0 max-w-[60ch]">
-        <p className="text-[16px] font-semibold leading-snug">{page.greeting}</p>
+        <p className="text-[16px] leading-snug">{page.greeting} <b>Emmanuel KACOU.</b></p>
         <p className="mt-3 text-[15px] leading-[1.6] text-ink">
-          Je suis <strong>développeur full-stack à Abidjan</strong>. Je
-          transforme de <strong>vraies frustrations</strong> en{" "}
-          <strong>produits numériques concrets</strong> : web, mobile et
-          systèmes. Des standards internationaux, un impact local.
+          <strong>Fullstack Developer</strong> à Abidjan. Je
+          transforme mes <strong>observations des problèmes du quotidien</strong> en{" "}
+          <strong>solutions numériques concrets</strong> : web, mobile et
+          systèmes. <br/> Une idée de projets ? Let's work together !
         </p>
         <a
           href={`mailto:${page.email}`}

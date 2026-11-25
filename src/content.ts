@@ -9,7 +9,7 @@ import type { IconName } from "./icons";
 
 export const page = {
   title: "Portfolio",
-  greeting: "Bonjour, je suis Emmanuel KACOU.",
+  greeting: "Hello, je suis ",
   contactLabel: "Me contacter",
   email: "kacouemmanuel225@yahoo.com",
 };
@@ -149,36 +149,24 @@ export const projectTabs: ProjectTab[] = [
     id: "ongoing",
     label: "En cours et idées",
     icon: "clock",
-    items: [
-      {
-        title: "SANWI CONNECT",
-        description: "Réseau social de la communauté Sanwi.",
-        tags: [],
-        status: "En cours",
-        icon: "share",
-      },
-      {
-        title: "X-Connect",
-        description:
-          "Réseautage pair à pair pour faible connectivité, échange de profils par QR code.",
-        tags: [],
-        status: "Concept",
-        icon: "qr",
-      },
-      {
-        title: "Rustavel",
-        description: "Framework web Rust inspiré de Laravel.",
-        tags: ["Open source"],
-        status: "Début de projet",
-        icon: "box",
-      },
-    ],
+    items: [],
   },
 ];
 
-export const now = [
-  "Abiaty Ma News, avec une API Laravel et React Native.",
-  "Mathematiques, Machine Learning & Deep Learning.",
+export type NowItem = {
+  label: string;
+  text: string;
+};
+
+export const now: NowItem[] = [
+  {
+    label: "Je construis",
+    text: "Abiaty Ma News avec une API Laravel et une application React Native.",
+  },
+  {
+    label: "J'approfondis",
+    text: "Les maths appliquées au Machine Learning et au Deep Learning.",
+  },
 ];
 
 export const contacts: { label: string; href: string }[] = [
