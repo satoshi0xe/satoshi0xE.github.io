@@ -54,10 +54,10 @@ strong {
   animation: fade-in 150ms ease;
 }
 
-@keyframes portfolio-letter-in {
+@keyframes text-letter-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(0.3em);
   }
   to {
     opacity: 1;
@@ -65,17 +65,20 @@ strong {
   }
 }
 
-.portfolio-title {
-  display: inline-block;
+.animated-text {
+  display: inline;
 }
 
-.portfolio-letter {
+.animated-text__letter {
   display: inline-block;
   opacity: 0;
-  animation: portfolio-letter-in 300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--letter-index) * 45ms);
-  transition: transform 120ms ease;
-  will-change: transform;
+  animation: text-letter-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animated-text:hover .animated-text__letter,
+a:focus-visible .animated-text .animated-text__letter {
+  transform: translateY(-0.15em);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -83,13 +86,18 @@ strong {
     scroll-behavior: auto;
   }
 
-  .fade-in,
-  .portfolio-letter {
+  .fade-in {
     animation: none;
-    opacity: 1;
   }
 
-  .portfolio-title:hover .portfolio-letter {
+  .animated-text__letter {
+    animation: none;
+    opacity: 1;
+    transition: none;
+  }
+
+  .animated-text:hover .animated-text__letter,
+  a:focus-visible .animated-text .animated-text__letter {
     transform: none;
   }
 }

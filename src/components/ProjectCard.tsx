@@ -1,6 +1,7 @@
 import type { Project } from "../content";
 import { icons } from "../icons";
 import { ExternalLink, Image as ImageIcon } from "lucide-react";
+import { AnimatedText } from "./AnimatedText";
 
 function Body({ project }: { project: Project }) {
   const Icon = icons[project.icon];
@@ -32,7 +33,9 @@ function Body({ project }: { project: Project }) {
           strokeWidth={1.5}
           aria-hidden="true"
         />
-        <h3 className="text-[14px] font-semibold leading-snug">{project.title}</h3>
+        <h3 className="text-[14px] font-semibold leading-snug">
+          <AnimatedText text={project.title} />
+        </h3>
       </div>
       <p className="mt-2 line-clamp-2 text-[13px] leading-normal text-muted">
         {project.description}

@@ -1,12 +1,21 @@
 import { Mail } from "lucide-react";
 import { page } from "../content";
+import { AnimatedText } from "./AnimatedText";
 import { Illustration } from "./Illustration";
 
 export function Hero() {
   return (
     <header className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:justify-between sm:gap-6">
       <div className="min-w-0 max-w-[60ch]">
-        <p className="text-[16px] leading-snug">{page.greeting} <b>Emmanuel KACOU.</b></p>
+        <p className="text-[16px] leading-snug">
+          <AnimatedText text={page.greeting} />
+          <b>
+            <AnimatedText
+              text="Emmanuel KACOU."
+              delayOffset={page.greeting.length}
+            />
+          </b>
+        </p>
         <p className="mt-3 text-[15px] leading-[1.6] text-ink">
           <strong>Fullstack Developer</strong> à Abidjan. Je
           transforme mes <strong>observations des problèmes du quotidien</strong> en{" "}
