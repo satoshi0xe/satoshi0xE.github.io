@@ -56,8 +56,8 @@ export function Illustration() {
 
   return (
     <svg
-      viewBox="0 0 112 54"
-      className="h-[112px] w-[144px] shrink-0 self-end text-ink sm:h-[148px] sm:w-[188px]"
+      viewBox="0 0 74 54"
+      className="h-[105px] w-[144px] shrink-0 self-end text-ink sm:h-[137px] sm:w-[188px]"
       role="img"
       aria-label="Portrait abstrait réalisé en ASCII"
     >
@@ -68,9 +68,7 @@ export function Illustration() {
           y={(index + 1) * 1.02}
           fill="currentColor"
           fontFamily="monospace"
-          fontSize="0.78"
-          textLength="112"
-          lengthAdjust="spacingAndGlyphs"
+          fontSize="1"
         >
           {line}
         </text>
