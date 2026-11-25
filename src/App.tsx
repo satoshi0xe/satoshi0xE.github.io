@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { contacts, now, page, projectTabs, sections, skillTabs } from "./content";
 import { Hero } from "./components/Hero";
 import { ProjectCard } from "./components/ProjectCard";
@@ -8,7 +9,18 @@ export function App() {
   return (
     <main className="mx-auto w-full max-w-[720px] px-6 pt-12 pb-16 sm:pt-16">
       <h1 className="text-[34px] leading-[1.15] font-bold tracking-[-0.02em]">
-        {page.title}
+        <span className="portfolio-title" aria-label={page.title}>
+          {page.title.split("").map((letter, index) => (
+            <span
+              key={`${letter}-${index}`}
+              className="portfolio-letter"
+              style={{ "--letter-index": index } as CSSProperties}
+              aria-hidden="true"
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
       </h1>
       <Hero />
 
