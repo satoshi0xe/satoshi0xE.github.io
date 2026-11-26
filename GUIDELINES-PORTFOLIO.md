@@ -13,6 +13,7 @@ Le skill `frontend-design` pousse vers des choix audacieux et distinctifs. Ici, 
 ## 1. Skills à installer et à charger avant de commencer
 
 ```bash
+npx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices
 npx skills add https://github.com/anthropics/skills --skill frontend-design
 ```
 
@@ -28,20 +29,17 @@ Hors périmètre : animations décoratives, effets de survol spectaculaires, mas
 ## 3. Analyse de la capture (à reproduire fidèlement)
 
 **Cadre**
-
 - Fond blanc, une seule colonne centrée, largeur maximale 720 px, marges latérales 24 px sur mobile.
 - Aucun header de navigation visible : la page s'ouvre directement sur le titre.
 
 **Blocs, de haut en bas**
-
 1. Titre de page "Portfolio" : grand, gras, aligné à gauche.
 2. Hero en deux colonnes : à gauche une salutation ("Hello, I'm ...") puis un court paragraphe avec quelques groupes de mots en gras, puis un petit bouton outline avec icône ; à droite une illustration au trait, monochrome.
 3. Section "Skills" : onglets avec petites icônes (l'onglet actif est souligné), puis une grille de 3 colonnes sur 2 lignes de petites cartes bordurées, chacune avec une icône et un libellé.
 4. Section "Projects" : onglets (actif : "Featured"), puis une grille de 2 cartes. Chaque carte : icône + titre, description sur 2 lignes, pastille de tag.
 
 **Ton visuel**
-
-- Texte secondaire en gris moyen, bordures grises très claires, rayon d'angle faible, aucune couleur d'accent.
+- Texte secondaire en gris moyen, bordures grises très claires, rayon d'angle faible, aucune couleur d'accent dans la référence (l'accent ajouté est décrit en section 4).
 - Tout est petit et dense : les cartes ont un texte de 13 à 14 px.
 
 ## 4. Design tokens
@@ -50,16 +48,33 @@ Hors périmètre : animations décoratives, effets de survol spectaculaires, mas
 |---|---|
 | Fond | `#FFFFFF` |
 | Texte principal | `#37352F` |
-| Texte secondaire | `#787774` |
+| Texte secondaire | `#6B6A66` |
 | Bordure | `#E9E9E7` |
 | Fond au survol | `#F7F7F5` |
 | Pastille de tag | fond `#F1F1EF`, texte `#37352F` |
-| Focus visible | contour 2 px `#37352F`, décalage 2 px |
+| Accent | `#5B3FD9` (voir "Couleur d'accent" ci-dessous) |
+| Accent au survol | `#4A31B8` |
+| Accent doux | `#F1EEFC` |
+| Focus visible | contour 2 px `#5B3FD9`, décalage 2 px |
 | Rayon | 6 px (cartes, boutons), 4 px (pastilles) |
 | Espacement | échelle de 4 px : 4, 8, 12, 16, 24, 32, 48, 64 |
 
-**Typographie**
+**Couleur d'accent**
 
+Un violet-indigo mesuré marque la présence du site sans casser la sobriété. La capture de référence n'en a pas : l'accent est un ajout volontaire, à garder rare.
+
+Contrastes calculés (WCAG) : `#5B3FD9` sur `#FFFFFF` 6,65:1, sur `#F7F7F5` 6,2:1, sur `#F1EEFC` 5,82:1 ; `#4A31B8` sur `#FFFFFF` 8,67:1. Tous passent le niveau AA pour du texte courant. L'agent les revérifie avec un outil de contraste après intégration.
+
+Où l'utiliser (cinq endroits maximum) :
+1. L'onglet actif : texte et soulignement de 2 px en `#5B3FD9`.
+2. Le contour de focus clavier.
+3. Les liens et le bouton "Me contacter" au survol : bordure et icône en `#5B3FD9`, texte en `#4A31B8` pour les liens.
+4. Les pastilles de statut "En production" : fond `#F1EEFC`, texte `#5B3FD9`. La pastille "En cours" reste grise (`#F1F1EF`), "Concept" aussi.
+5. Les icônes des cartes, uniquement au survol.
+
+Interdits : mots colorés dans les paragraphes, dégradés, grands aplats, titres en violet, ombres colorées, deuxième couleur d'accent.
+
+**Typographie**
 - Une seule famille sans-serif neutre : Inter, avec Geist en alternative. Exception assumée à la consigne anti-polices-par-défaut de `frontend-design`, car la référence demande de la neutralité.
 - Titre de page : 32 à 36 px, graisse 700, interligne serré, léger crénage négatif.
 - Titres de section : 20 à 22 px, graisse 600.
@@ -68,7 +83,6 @@ Hors périmètre : animations décoratives, effets de survol spectaculaires, mas
 - Jamais de majuscules forcées ni de texte en lettres espacées.
 
 **Icônes**
-
 - Jeu unique en trait fin (style Lucide), 16 px, épaisseur 1,5, couleur du texte principal. Pas d'emojis dans l'interface.
 
 ## 5. Contenu (repris du portfolio actuel, en français)
@@ -76,20 +90,17 @@ Hors périmètre : animations décoratives, effets de survol spectaculaires, mas
 Tout le texte du site est en français. Ne rien inventer : pas de chiffres, pas de témoignages, pas de logos de clients.
 
 **Identité**
-
 - Titre de page : "Portfolio"
-- Salutation : "Bonjour, je suis Emmanuel Kacou." (alias public : satoshi0xe, à confirmer, voir section 10)
+- Salutation : "Bonjour, je suis Emmanuel Kacou." (alias public : Satoshi0xE, à confirmer, voir section 10)
 - Paragraphe, à partir du texte existant, avec ces groupes en gras : **développeur full-stack à Abidjan**, **vraies frustrations**, **produits numériques concrets**. Base : "Je transforme de vraies frustrations en produits numériques concrets : web, mobile et systèmes. Des standards internationaux, un impact local."
 - Bouton outline avec icône : "Me contacter" (lien `mailto:`, voir contacts).
 
 **Onglets "Compétences"**
-
-- Onglet *Stack* : Laravel, React Native, React, Vue.js, Nuxt, NextJS, TailwindCSS, PostgreSQL, MySQL, Docker, Git (une carte chacun, 6 visibles puis le reste dans la grille).
+- Onglet *Stack* : Laravel, React Native, React, Vue.js, Nuxt, TailwindCSS, PostgreSQL, MySQL, Docker, Git (une carte chacun, 6 visibles puis le reste dans la grille).
 - Onglet *Expertise* : APIs REST, Applications mobiles, Web en production, Systèmes avec Rust, Blockchain.
-- Onglet *Langages* : PHP, JavaScript, Python (débutant). N'ajouter des langues parlées que si elles sont confirmées.
+- Onglet *Langages* : PHP, JavaScript, Rust, Python (débutant). N'ajouter des langues parlées que si elles sont confirmées.
 
 **Onglets "Projets"**
-
 - Onglet *À la une* (2 colonnes) :
   - **Abiaty Ma News** : plateforme d'actualités et de mémoire pour le village d'Abiaty, avec temps réel et notifications push. Tags : Laravel, React Native. Statut : en cours.
   - **Genius Network Technology** : application web livrée en mission freelance, du brief à la mise en ligne. Tags : Laravel, React. Statut : en production.
@@ -105,7 +116,6 @@ Tout le texte du site est en français. Ne rien inventer : pas de chiffres, pas 
 **Contacts** (pied de page, texte simple) : email `kacouemmanuel225@yahoo.com`, WhatsApp `https://wa.me/2250757567142`, LinkedIn `https://www.linkedin.com/in/emmanuel-kacou-74397b247`, GitHub `https://github.com/satoshi0xE`.
 
 **Règles d'écriture**
-
 - Phrases concrètes, verbes d'action, aucun vocabulaire générique ("passionné", "solutions innovantes", "à la pointe").
 - Pas de tiret long ni de tiret demi-cadratin dans les textes. Utiliser deux-points, virgules ou points.
 - Copier les formulations existantes avant d'en inventer de nouvelles.
@@ -143,11 +153,10 @@ Remotion ne sert pas à animer le site. Il sert à produire de courts clips de d
 **Quand l'utiliser** : seulement si de vraies captures d'écran des projets sont fournies. Sinon, ne rien produire en vidéo et garder des cartes statiques.
 
 **Règles**
-
 - Un clip par projet vedette, 4 à 6 secondes, 30 fps, boucle sans coupure visible.
 - Rapport 16:10, 1280 x 800, sortie mp4 (H.264) et webm, moins de 1,5 Mo chacun, plus une affiche png.
 - Mouvements sobres : léger zoom, défilement doux de l'écran, ressort discret. Utiliser `spring` et `interpolate` comme dans le skill, jamais de transitions CSS.
-- Mêmes tokens de couleur que le site : fond blanc, cadre d'appareil gris très clair, aucune couleur vive ajoutée.
+- Mêmes tokens de couleur que le site : fond blanc, cadre d'appareil gris très clair, l'accent `#5B3FD9` seulement pour un petit repère (curseur ou surlignage), jamais en grand aplat.
 - Images référencées avec `staticFile()`, composition déclarée dans `Root.tsx`, rendu par `npx remotion render`.
 - Intégration : `<video autoplay muted loop playsinline preload="none" poster="...">`, chargement différé, arrêt si le visiteur préfère moins d'animations.
 
@@ -155,8 +164,8 @@ Remotion ne sert pas à animer le site. Il sert à produire de courts clips de d
 
 - Onglets accessibles : `role="tablist"`, `role="tab"`, `role="tabpanel"`, `aria-selected`, flèches gauche et droite pour naviguer, Entrée ou Espace pour activer.
 - Changement d'onglet : fondu de 150 ms, aucun déplacement.
-- Survol des cartes : fond `#F7F7F5` en 120 ms, rien d'autre.
-- Bouton : fond `#F7F7F5` au survol, contour renforcé au focus.
+- Survol des cartes : fond `#F7F7F5` en 120 ms, icône en `#5B3FD9`, rien d'autre.
+- Bouton : fond `#F7F7F5` au survol, bordure et icône en `#5B3FD9`, contour d'accent au focus.
 - Respecter `prefers-reduced-motion` : couper fondus et vidéos.
 
 ## 9. Qualité et critères d'acceptation

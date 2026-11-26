@@ -1,7 +1,6 @@
 import { Mail } from "lucide-react";
 import { page } from "../content";
 import { AnimatedText } from "./AnimatedText";
-import { Illustration } from "./Illustration";
 
 export function Hero() {
   return (
@@ -30,7 +29,13 @@ export function Hero() {
           {page.contactLabel}
         </a>
       </div>
-      <Illustration />
+      <img
+        src="/avatar-gwu-afro.svg"
+        alt="Emmanuel Kacou devant un ordinateur marqué GWU"
+        width={160}
+        height={160}
+        className="h-28 w-28 shrink-0 self-end object-contain sm:h-40 sm:w-40"
+      />
     </header>
   );
 }
