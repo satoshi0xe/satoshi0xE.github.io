@@ -34,11 +34,11 @@ export function Hero() {
         </a>
       </div>
       <img
-        src="/avatar-gwu-ingenieur.svg"
+        src="/avatar-gwu-ingenieur.png"
         alt="Emmanuel Kacou devant un ordinateur marqué GWU"
-        width={160}
-        height={160}
-        className="h-40 w-40 shrink-0 self-center object-contain sm:self-end"
+        width={250}
+        height={250}
+        className="h-[250px] w-[250px] shrink-0 self-center object-contain sm:self-end"
       />
     </header>
   );

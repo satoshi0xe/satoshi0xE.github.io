@@ -191,6 +191,11 @@ strong {
     transform var(--t-base) var(--ease);
 }
 
+.project-card--link:focus-visible .project-card__visit-icon {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .project-status--production {
   background-color: var(--accent-soft);
   color: var(--accent);
