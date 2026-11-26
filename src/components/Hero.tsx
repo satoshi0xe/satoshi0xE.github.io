@@ -16,7 +16,7 @@ export function Hero() {
           </b>
         </p>
         <p className="mt-3 text-[15px] leading-[1.6] text-ink">
-          <strong>Fullstack Developer</strong> à Abidjan. Je
+          <strong>Software Developer</strong> à Abidjan. Je
           transforme mes <strong>observations des problèmes du quotidien</strong> en{" "}
           <strong>solutions numériques concrets</strong> : web, mobile et
           systèmes. <br/> Une idée de projets ? Let's work together !
