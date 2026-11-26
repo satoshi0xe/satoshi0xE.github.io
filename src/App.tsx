@@ -85,7 +85,7 @@ export function App() {
             <li key={contact.href}>
               <a
                 href={contact.href}
-                className="underline decoration-line underline-offset-2 hover:bg-hover"
+                className="text-link"
                 {...(contact.href.startsWith("http")
                   ? { target: "_blank", rel: "noreferrer" }
                   : {})}

@@ -10,13 +10,15 @@ function Body({ project }: { project: Project }) {
   return (
     <>
       {project.preview ? (
-        <img
-          src={project.preview.src}
-          alt={project.preview.alt}
-          className="mb-3 aspect-[16/10] w-full rounded-[4px] border border-line object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="mb-3 overflow-hidden rounded-[4px]">
+          <img
+            src={project.preview.src}
+            alt={project.preview.alt}
+            className="project-card__preview block aspect-[16/10] w-full rounded-[4px] border border-line object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       ) : (
         <div
           role="img"
@@ -29,7 +31,7 @@ function Body({ project }: { project: Project }) {
       )}
       <div className="flex items-start gap-2">
         <Icon
-          className="mt-0.5 size-4 shrink-0"
+          className="project-card__icon mt-0.5 size-4 shrink-0"
           strokeWidth={1.5}
           aria-hidden="true"
         />
@@ -44,7 +46,11 @@ function Body({ project }: { project: Project }) {
         {pills.map((pill) => (
           <li
             key={pill}
-            className="rounded-[4px] bg-pill px-1.5 py-0.5 text-[12px] leading-normal text-ink"
+            className={`rounded-[4px] px-1.5 py-0.5 text-[12px] leading-normal ${
+              pill === project.status && project.status === "En production"
+                ? "project-status--production"
+                : "bg-pill text-ink"
+            }`}
           >
             {pill}
           </li>
@@ -54,7 +60,7 @@ function Body({ project }: { project: Project }) {
         <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-medium text-ink underline decoration-line underline-offset-2">
           Visiter le site
           <ExternalLink
-            className="size-3.5"
+            className="project-card__visit-icon size-3.5"
             strokeWidth={1.5}
             aria-hidden="true"
           />
@@ -66,7 +72,7 @@ function Body({ project }: { project: Project }) {
 
 export function ProjectCard({ project }: { project: Project }) {
   const className =
-    "flex h-full flex-col rounded-[6px] border border-line p-3 transition-colors duration-[120ms] hover:bg-hover";
+    "project-card flex h-full flex-col rounded-[6px] border border-line p-3";
 
   if (!project.href) {
     return (
@@ -82,7 +88,7 @@ export function ProjectCard({ project }: { project: Project }) {
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className={className}
+        className={`${className} project-card--link`}
       >
         <Body project={project} />
         <span className="sr-only">, nouvel onglet</span>

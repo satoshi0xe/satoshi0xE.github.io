@@ -23,18 +23,22 @@ export function Hero() {
         </p>
         <a
           href={`mailto:${page.email}`}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-[6px] border border-line px-2.5 py-1 text-[13px] text-ink transition-colors duration-[120ms] hover:bg-hover"
+          className="contact-link mt-4 inline-flex items-center gap-1.5 rounded-[6px] border border-line px-2.5 py-1 text-[13px] text-ink"
         >
-          <Mail className="size-4" strokeWidth={1.5} aria-hidden="true" />
+          <Mail
+            className="contact-link__icon size-4"
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
           {page.contactLabel}
         </a>
       </div>
       <img
-        src="/avatar-gwu-afro.svg"
+        src="/avatar-gwu-ingenieur.svg"
         alt="Emmanuel Kacou devant un ordinateur marqué GWU"
         width={160}
         height={160}
-        className="h-28 w-28 shrink-0 self-end object-contain sm:h-40 sm:w-40"
+        className="h-40 w-40 shrink-0 self-center object-contain sm:self-end"
       />
     </header>
   );

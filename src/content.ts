@@ -112,7 +112,7 @@ export const projectTabs: ProjectTab[] = [
         title: "Genius Network Technology",
         description:
           "Application web livrée en mission freelance, du brief à la mise en ligne.",
-        tags: ["Laravel", "React"],
+        tags: ["Laravel", "Livewire", "TailwindCSS"],
         status: "En production",
         icon: "building",
         href: "https://geniusntech.com/",
@@ -122,16 +122,16 @@ export const projectTabs: ProjectTab[] = [
         },
       },
       {
-        title: "Coopewo",
+        title: "Coopewo-scoop",
         description:
           "Plateforme pour une organisation coopérative, gestion des membres et présence numérique.",
-        tags: ["Laravel", "Vue.js"],
+        tags: ["Vue.js", "Vite", "TailwindCSS"],
         status: "En production",
         icon: "users",
         href: "https://www.coopewo.org",
       },
       {
-        title: "Attron Cab",
+        title: "ATTRON CAB",
         description:
           "Plateforme numérique pour une entreprise de transport à Abidjan.",
         tags: ["Laravel", "TailwindCSS"],
@@ -140,7 +140,7 @@ export const projectTabs: ProjectTab[] = [
         href: "https://attron-cab.com/",
         preview: {
           src: "/projects/attron-cab.jpg",
-          alt: "Capture de la page d'accueil d'Attron Cab",
+          alt: "Capture de la page d'accueil de ATTRON-CAB",
         },
       },
     ],
